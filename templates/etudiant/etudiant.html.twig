@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %}list etudiant{% endblock %}
+
+{% block content %}
+    <h1>Liste des étudiants</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Id Etudiant</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prenom</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td> <a href ="/etudiant/{{ etudiant.getIdEtudiant }}">{{ etudiant.getIdEtudiant }}</td>
+                <td> {{ etudiant.getNom }}</td>
+                <td>{{ etudiant.getPrenom }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+{% endblock %}

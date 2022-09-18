@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{% block title %}list etudiant{% endblock %}
+
+{% block content %}
+    <h1>Liste des étudiants</h1>
+    {% for etudiant in etudiants %}
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Id Etudiant</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Suppression</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row"><a href ="/etudiant/{{ etudiant.getIdEtudiant }}">{{ etudiant.getIdEtudiant }}</th>
+                <td> {{ etudiant.getNom }}</td>
+                <td>{{ etudiant.getPrenom }}</td>
+                <td><a href="/etudiant/{{ etudiant.getIdEtudiant }}/del" class="btn btn-danger">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    {% endfor %}
+{% endblock %}

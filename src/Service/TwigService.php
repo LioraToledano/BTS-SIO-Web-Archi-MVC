@@ -19,6 +19,7 @@ class TwigService
             ]);
         }
         return self::$twig;
+
     }
 
 }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Formulaire</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<center>
+        <h1 style="color:lightpink">Veuillez remplir les champs du formulaire SVP 📨 </h1>
+</center>
+
+
+<form class="row g-3" method="post" action="/soumissionformulaire">
+    <div class="col-md-6">
+        <label for="nom" class="name">Nom</label>
+        <input placeholder="Saisissez votre nom " type="text" id="name" name="name">
+    </div>
+    <div>
+        <label for="prenom" class="prenom">Prénom</label>
+        <input placeholder="Saisissez votre prénom" type="text" id="prenom" name="prenom">
+    </div>
+    <div class="col-md-6">
+        <label for="email" class="email">Email</label>
+        <input placeholder="Saisissez votre e-mail " type="email" id="email" name="email">
+    </div>
+    <div>
+        <label for="login" class="login">Nom d'utilisateur</label>
+        <input placeholder="Saisissez votre login" type="text" id="login" name="login">
+    </div>
+    <div class="col-md-6">
+        <label for="password" class="password">Mot de passe</label>
+        <input placeholder="Saisissez votre MDP " type="password" id="password" name="password">
+    </div>
+    <div class="col-12">
+        <button style="background-color: lightpink; border-color: azure" type="submit" class="btn btn-primary">Soumettre mon formulaire </button>
+    </div>
+</form>
+
+</body>
+</html>
