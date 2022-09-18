@@ -11,6 +11,8 @@
                 <th>Id Etudiant</th>
                 <th>Nom</th>
                 <th>Prenom</th>
+                <th>Email</th>
+                <th>Login</th>
                 <th>Suppression</th>
             </tr>
             </thead>
@@ -19,7 +21,10 @@
                 <th scope="row"><a href ="/etudiant/{{ etudiant.getIdEtudiant }}">{{ etudiant.getIdEtudiant }}</th>
                 <td> {{ etudiant.getNom }}</td>
                 <td>{{ etudiant.getPrenom }}</td>
-                <td><a href="/etudiant/{{ etudiant.getIdEtudiant }}/del" class="btn btn-danger">Delete</a></td>
+                <td>{{ etudiant.getEmail }}</td>
+                <td>{{ etudiant.getLogin }}</td>
+
+                <td><a href="/etudiant/{{ etudiant.getIdEtudiant }}/del" class="btn btn-danger">Supprimer</a></td>
             </tr>
             </tbody>
         </table>

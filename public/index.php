@@ -21,6 +21,10 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $rout
     $route->addRoute('GET', '/etudiant', 'Quizz\Controller\Formulaire\ListerEtudiantController');
     $route->addRoute('GET', '/etudiant/{id:\d+}', 'Quizz\Controller\Formulaire\EtudiantController');
     $route->addRoute('GET', '/etudiant/{id:\d+}/del', 'Quizz\Controller\Formulaire\DeleteEtudiantController');
+    $route->addRoute('POST', '/modifierInformations/{id:\d+}', 'Quizz\Controller\Formulaire\UpdateEtudiantController');
+
+
+
 
 
 

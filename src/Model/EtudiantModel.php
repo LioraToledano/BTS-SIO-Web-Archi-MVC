@@ -41,6 +41,9 @@ class EtudiantModel
             $etudiant->setIdEtudiant($value["idEtudiant"]);
             $etudiant->setNom($value["nom"]);
             $etudiant->setPrenom($value["prenom"]);
+            $etudiant->setEmail($value["email"]);
+            $etudiant->setLogin($value["login"]);
+
             $tabEtudiant[] = $etudiant;
         }
 
@@ -61,6 +64,9 @@ class EtudiantModel
         $etudiant->setIdEtudiant($result["idEtudiant"]);
         $etudiant->setNom($result["nom"]);
         $etudiant->setPrenom($result["prenom"]);
+        $etudiant->setEmail($result["email"]);
+        $etudiant->setLogin($result["login"]);
+
 
         return  $etudiant;
     }
@@ -73,6 +79,22 @@ class EtudiantModel
     {
         $requete = $this->bdd->prepare('DELETE FROM etudiants where idEtudiant = ' . $id);
         $requete->execute();
+    }
+
+    public function ModificationDonnees(int $id)
+    {
+        try {
+            $nom = $_POST["name"];
+            $prenom = $_POST["prenom"];
+            $email = $_POST["email"];
+            $login = $_POST["login"];
+            $requete = $this->bdd->prepare("UPDATE etudiants SET nom =" ."'$nom'" . ", prenom =" ."'$prenom'" .  ", email =" ."'$email'" . ", login=" ."'$login'" . " WHERE idEtudiant =" ."'$id'");
+            $requete->execute();
+
+        }
+        catch (PDOException $exception){
+            echo "Il y a une erreur: " .$exception->getMessage();
+        }
 
     }
 

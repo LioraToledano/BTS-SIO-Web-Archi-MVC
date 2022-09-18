@@ -1,25 +1,47 @@
 {% extends "base.html.twig" %}
 
-{% block title %}list etudiant{% endblock %}
-
 {% block content %}
-    <h1>Liste des étudiants</h1>
 
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">Id Etudiant</th>
-                <th scope="col">Nom</th>
-                <th scope="col">Prenom</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td> <a href ="/etudiant/{{ etudiant.getIdEtudiant }}">{{ etudiant.getIdEtudiant }}</td>
-                <td> {{ etudiant.getNom }}</td>
-                <td>{{ etudiant.getPrenom }}</td>
-            </tr>
-            </tbody>
-        </table>
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Formulaire</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<center>
+        <h1 style="color:lightpink">Veuillez modifier les champs du formulaire SVP 📨 </h1>
+</center>
+
+
+<form class="row g-3" method="post" action="/modifierInformations/{{ etudiant.IdEtudiant }}">
+    <div class="col-md-6">
+        <label for="nom" class="name">Nom</label>
+        <input value="{{ etudiant.getNom }}" type="text" id="name" name="name">
+    </div>
+    <div>
+        <label for="prenom" class="prenom">Prénom</label>
+        <input value="{{ etudiant.getPrenom }}" type="text" id="prenom" name="prenom">
+    </div>
+    <div class="col-md-6">
+        <label for="email" class="email">Email</label>
+        <input value="{{ etudiant.getEmail }}" type="email" id="email" name="email">
+    </div>
+    <div>
+        <label for="login" class="login">Nom d'utilisateur</label>
+        <input value="{{ etudiant.getLogin }}" type="text" id="login" name="login">
+    </div>
+
+    <div class="col-12">
+        <button style="background-color: lightpink; border-color: azure" type="submit" class="btn btn-primary"> Modifier mes informations </button>
+    </div>
+</form>
+
+</body>
+</html>
 
 {% endblock %}
