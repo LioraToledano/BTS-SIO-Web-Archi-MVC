@@ -81,3 +81,10 @@ Le user réceptionne la requête "Reponse" pour que le browser puisse interprét
 Benoit Foujols - ORT Sup' Montreuil - AC Creteil
 
 ![signature](https://github.com/bfoujols/bfoujols/blob/main/assets/bfoujols-sign.png?raw=true)
+
+
+# Afin de charger les pages, il faut utiliser la commande:
+
+````shell
+$  php -S localhost:9000 -t public       
+````
