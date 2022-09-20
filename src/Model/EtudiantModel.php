@@ -21,8 +21,16 @@ class EtudiantModel
         try {
 
             $_POST['password'] = password_hash( $_POST['password'],PASSWORD_DEFAULT );
-            $requete = $this->bdd->prepare("INSERT INTO `etudiants` (`login`,`motDePasse`,`nom`,`prenom`,`email`) VALUES( '$_POST[login]','$_POST[password]','$_POST[name]','$_POST[prenom]','$_POST[email]')");
-            $requete->execute();
+            if($_POST['password'])
+            {
+                $requete = $this->bdd->prepare("INSERT INTO `etudiants` (`login`,`motDePasse`,`nom`,`prenom`,`email`) VALUES( '$_POST[login]','$_POST[password]','$_POST[name]','$_POST[prenom]',  '$_POST[email]')");
+                $requete->execute();
+                echo 'Inscription effectuée';
+            }
+            else
+            {
+                echo 'Inscription invalide !';
+            }
         }
         catch (PDOException $exception){
             echo "Il y a une erreur: " .$exception->getMessage();
@@ -41,9 +49,8 @@ class EtudiantModel
             $etudiant->setIdEtudiant($value["idEtudiant"]);
             $etudiant->setNom($value["nom"]);
             $etudiant->setPrenom($value["prenom"]);
-            $etudiant->setEmail($value["email"]);
             $etudiant->setLogin($value["login"]);
-
+            $etudiant->setEmail($value["email"]);
             $tabEtudiant[] = $etudiant;
         }
 
@@ -64,9 +71,8 @@ class EtudiantModel
         $etudiant->setIdEtudiant($result["idEtudiant"]);
         $etudiant->setNom($result["nom"]);
         $etudiant->setPrenom($result["prenom"]);
-        $etudiant->setEmail($result["email"]);
         $etudiant->setLogin($result["login"]);
-
+        $etudiant->setEmail($result["email"]);
 
         return  $etudiant;
     }
